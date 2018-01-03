@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SinistroApp.Models.CmbOperacaoModel>
+
+<div class="form-group col-md-6 col-sm-6 col-xs-6">
+    <label>Operação</label>
+    <div class="">
+        <select id="sns-cmb-operacao-despesa" class="form-control input-sm">
+            <option value="0">Selecione</option>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <option value="@Html.DisplayFor(modelItem => item.codOperacao)">@Html.DisplayFor(modelItem => item.nmOperacao)</option>
+                }
+            }
+        </select>
+    </div>
+</div>
+<div class="form-group col-md-4 col-sm-4 col-xs-6">
+    <label>Meio de Pagamento</label>
+    <div class="">
+        <select id="sns-cmb-pag-despesa" class="form-control input-sm sns-cmb-meio-pagamento">
+            <option value="0">Selecione</option>
+            <option value="1">Boleto</option>
+            <option value="2">Cartão de crédito</option>
+            <option value="3">Débito</option>
+        </select>
+    </div>
+</div>

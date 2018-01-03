@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "UsuarioTeste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- /page content -->
+<div class="sns-position-title">
+
+    <div class="clearfix"></div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4 class="sns-panel-title">Teste <small>Usuário</small></h4>
+
+                <ul class="nav navbar-right panel_toolbox">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="x_content">
+                <form id="sns-form-aviso-avisin" data-parsley-validate class="form-horizontal form-label-left">
+
+                    <div class="clearfix"></div>
+
+                    @*<div class="form-group col-md-3 col-sm-4 col-xs-12">
+                        <label for="sns-usuario-token">Usuário</label>
+                        <input id="sns-usuario-token" type="text" class="form-control input-sm" required="required" value="User#Sin@f" placeholder=" ">
+                    </div>
+                    <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                        <label for="sns-password-token">Senha</label>
+                        <input id="sns-password-token" type="text" class="form-control input-sm" required="required" value="sinaf123" placeholder=" ">
+                    </div>
+                    <div class="form-group col-md-6 col-sm-4 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-gera-token" type="button" class="btn sns-btn-ok btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-cog sns-margin-icon sns-icon-sm-position" title="Gerar Token"></span>Gerar Token
+                        </button>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <label for="sns-obs-avisin">Token</label>
+                        <textarea id="sns-token-gerado" rows="4" class="form-control" maxlength="300" placeholder=" "></textarea>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="divider-dashed"></div>*@
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <label for="sns-usuario-teste-id">Id Usuário</label>
+                        <input id="sns-usuario-teste-id" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-busca-usuario" type="button" class="btn sns-btn-ok btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-search sns-margin-icon sns-icon-sm-position" title="Buscar"></span>Buscar Usuário
+                        </button>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="divider-dashed"></div>
+
+                    <div class="form-group col-md-6 col-sm-4 col-xs-12">
+                        <label for="sns-usuario-teste-nome">Nome</label>
+                        <input id="sns-usuario-teste-nome" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+
+                    <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                        <label for="sns-usuario-teste-dtnasc">Data Nascimento</label>
+                        <div class="input-group date">
+                            <input id="sns-usuario-teste-dtnasc" type="text" class="form-control input-sm @*sns-date*@" required="required" placeholder=" ">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                        <label for="sns-usuario-teste-email">E-mail</label>
+                        <input id="sns-usuario-teste-email" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-insere-usuario" type="button" class="btn btn-success btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-sign-in sns-margin-icon sns-icon-sm-position" title="Inserir"></span>Inserir Usuário
+                        </button>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-atualiza-usuario" type="button" class="btn btn-warning btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-wrench sns-margin-icon sns-icon-sm-position" title="Atualizar"></span>Atualizar Usuário
+                        </button>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-deleta-usuario" type="button" class="btn btn-danger btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-trash sns-margin-icon sns-icon-sm-position" title="Deletar"></span>Deletar Usuário
+                        </button>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="divider-dashed"></div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-busca-todos-usuarios" type="button" class="btn sns-btn-ok btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-search sns-margin-icon sns-icon-sm-position" title="Buscar Todos"></span>Buscar Todos
+                        </button>
+                    </div>
+
+                    <div id="sns-hid-todos-usuarios" class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <table id="sns-table-usuario-teste" class="table table-striped table-bordered headings" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="column-title">Id </th>
+                                    <th class="column-title">Nome </th>
+                                    <th class="column-title">Data Nascimento </th>
+                                    <th class="column-title">E-mail </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </form>        
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->
+@section scripts {
+    <script src="~/Scripts/crudUsuario.js"></script>
+}
+
+
+

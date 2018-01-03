@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SinistroApp.Models.GridCoberturaModel>
+
+<div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+    <table id="sns-table-cobert-avisin" class="table table-striped table-bordered sns-simple-table headings" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="check-all">
+                </th>
+                <th class="column-title">Cobertura </th>
+                <th class="column-title">Valor IS </th>
+                <th class="column-title">Estimativa Indenização </th>
+                <th class="column-title">Ramo </th>
+                <th class="column-title">Data Início Vigência </th>
+                <th class="column-title">Data Fim Vigência </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td id="sns-chk-cob-avisin-@Html.DisplayFor(modelItem => item.idCob)" class="a-center">
+                            <input type="checkbox" class="checkbox-all">
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.dscCob)</td>
+                        <td>@Html.DisplayFor(modelItem => item.vlIsCob)</td>
+                        <td class="td-input-info">
+                            <input id="" type="text" class="form-control input-sm" value="@Html.DisplayFor(modelItem => item.estIndenizacaoCob)">
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.ramoCob)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dtIniVigCob)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dtFimVigCob)</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

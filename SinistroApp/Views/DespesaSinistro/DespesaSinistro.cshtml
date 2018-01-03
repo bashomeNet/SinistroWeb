@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "DespesaSinistro";
+}
+<!-- tool action content -->
+<div class="sns-top-toolbox">
+    <div class="title_left">
+        <div class="btn-group">
+            <span class="fa fa-file sns-tool-action" title="Novo"></span>
+            <span class="fa fa-folder-open sns-tool-action" title="Recuperar"></span>
+            <span class="fa fa-save sns-tool-action" title="Salvar"></span>
+            <span class="fa fa-times sns-tool-action" title="Excluir"></span>
+            <span class="fa fa-search sns-tool-action sns-tool-action-after" title="Procurar"></span>
+        </div>
+    </div>
+</div>
+<!-- tool action content -->
+
+<!-- container -->
+<div class="sns-position-title">
+
+    <div class="clearfix"></div>
+
+    <!-- Despesa Sinistro -->
+    <div class="row calendar-exibit">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h4 class="sns-panel-title">Despesa <small>Sinistro</small></h4>
+
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="x_content">
+                    <br />
+                    <form id="sns-form-aviso" data-parsley-validate class="form-horizontal form-label-left">
+
+                        <!-- Partial View Dados Bancários -->
+                        @{
+                            Html.RenderPartial("_PartialCmbEmpresa", ViewData["CmbEmpresas"]);
+                        }
+
+                        @{
+                            Html.RenderPartial("_PartialCmbsucursal", ViewData["CmbSucursais"]);
+                        }
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group col-md-2 col-sm-2 col-xs-6">
+                            <label for="sns-txt-nr-prot-despesa">N° Protocolo</label>
+                            <input id="sns-txt-nr-prot-despesa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                        </div>
+                        <div class="form-group col-md-2 col-sm-2 col-xs-6">
+                            <label for="sns-txt-nr-despesa">N° indenização</label>
+                            <input id="sns-txt-nr-despesa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                            <label for="sns-txt-situacao-despesa">Situação</label>
+                            <input id="sns-txt-situacao-despesa" type="text" class="form-control input-sm" readonly placeholder=" ">
+                        </div>
+
+                        <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                            <label for="sns-txt-cobert-despesa">Cobertura</label>
+                            <input id="sns-txt-cobert-despesa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                        </div>
+                        <div class="form-group col-md-5 col-sm-7 col-xs-12">
+                            <label for="sns-txt-benef-despesa">Beneficiário</label>
+                            <input id="sns-txt-benef-despesa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                        </div>
+                        <div class="form-group col-md-3 col-sm-3 col-xs-8">
+                            <label for="sns-txt-cpf-despesa">CPF</label>
+                            <input id="sns-txt-cpf-despesa" type="text" class="form-control input-sm" required="required" placeholder=" " data-inputmask="'mask': '999.999.999-99'">
+                        </div>
+                        <div class="form-group sns-top-space col-md-2 col-sm-2 col-xs-4">
+                            <button id="sns-btn-cds-banco-despesa" type="button" class="btn sns-btn-ok btn-sm col-md-12 col-sm-12 col-xs-12">
+                                <span class="fa fa-pencil-square-o sns-margin-icon sns-tool-action" title="Cadastro"></span>Cadastro
+                            </button>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="divider-dashed"></div>
+
+                        <!-- Partial View Combo Operações -->
+                        @{
+                            Html.RenderPartial("_PartialOperMeioCobranca", ViewData["CmbOperacoes"]);
+                        }
+
+                        <div class="clearfix sns-top-space"></div>
+
+                        <!-- Partial View Dados Bancários -->
+                        @{
+                            Html.RenderPartial("_PartialDadosBancarios");
+                        }
+
+                        <div class="clearfix sns-top-space"></div>
+
+                        <fieldset class="scheduler-border">
+                            <legend class="scheduler-border">Valores</legend>
+                            <div class="form-group col-md-5 col-sm-5 col-xs-6">
+                                <label for="sns-txt-valtot-despesa">Valor Indenização Total</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">R$</span>
+                                    <input id="sns-txt-valtot-despesa" type="text" class="form-control input-sm sns-mask-money" placeholder=" ">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-5 col-sm-5 col-xs-6">
+                                <label for="sns-txt-pg-despesa">Pago</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">R$</span>
+                                    <input id="sns-txt-pg-despesa" type="text" class="form-control input-sm sns-mask-money" placeholder=" ">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group col-md-2 col-sm-2 col-xs-6">
+                                <label for="sns-txt-qtparc-despesa">Parcelas</label>
+                                <input id="sns-txt-qtparc-despesa" type="text" class="form-control input-sm" placeholder=" ">
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <label for="sns-txt-dtpvenc-despesa">Data 1º Vencimento</label>
+                                <div class="input-group date">
+                                    <input id="sns-txt-dtpvenc-despesa" class="form-control input-sm sns-date" type="text" data-inputmask="'mask': '99/99/9999'">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- container -->

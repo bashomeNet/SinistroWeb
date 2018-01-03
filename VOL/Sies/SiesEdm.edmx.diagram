@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dbf7640eb9a94b8fad38461c142644db" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="SiesModel.TB_temp2" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiesModel.Pessoa" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SiesModel.Usuario" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SiesModel.OrgaoProdutor" Width="1.625" PointX="2.5" PointY="10.25" />
+        <EntityTypeShape EntityType="SiesModel.DominioCampo" Width="1.625" PointX="7.375" PointY="0.75" />
+        <AssociationConnector Association="SiesModel.fkopr00" />
+        <AssociationConnector Association="SiesModel.fkORPUSR" />
+        <EntityTypeShape EntityType="SiesModel.Certificado" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SiesModel.Cobertura" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SiesModel.Emissao" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SiesModel.ItemOutRiscPess" Width="1.5" PointX="5" PointY="7.125" />
+        <EntityTypeShape EntityType="SiesModel.ParcelaPremio" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SiesModel.Produto" Width="1.5" PointX="11.375" PointY="0.75" />
+        <AssociationConnector Association="SiesModel.fkIORPIORP" />
+        <AssociationConnector Association="SiesModel.fkPESIORP" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

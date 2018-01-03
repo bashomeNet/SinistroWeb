@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5737a592fed14bfca71d6d43221c876d" Name="Diagram1">
+        <EntityTypeShape EntityType="SinistroModel.AvisoSinCes" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.AvisoSinistro" Width="1.5" PointX="5.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.CausaSinistro" Width="1.5" PointX="3" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.CoberturaSinistro" Width="1.5" PointX="7.5" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.IndenizacaoSinistro" Width="2.375" PointX="9.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.ParcelaSinistro" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.SinistroCartaEnvio" Width="1.5" PointX="7.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAviso" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoAnalise" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoDetalhe" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoHistorico" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoHistoricoCancelamento" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoHistoricoCartaComunicacao" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoHistoricoJson" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoProcessadoCertificado" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoProcessadoCobertura" Width="2.625" PointX="7.5" PointY="18.875" IsExpanded="true" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fkASICBSI" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fkCAUSIASI" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fkSinistroCartaEnvio_X_AvisoSinistro" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fkCBSIIDNSI" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoDetalhe_x_TB_PreAviso" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoHistorico_x_TB_PreAviso" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico" ManuallyRouted="false" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SinistroModel.TB_Temp1" Width="1.5" PointX="3.125" PointY="0.625" />
+        <EntityTypeShape EntityType="SinistroModel.PreAvisoCampo" Width="1.5" PointX="8.375" PointY="1" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo" />
+        <AssociationConnector Association="SinistroModel.fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

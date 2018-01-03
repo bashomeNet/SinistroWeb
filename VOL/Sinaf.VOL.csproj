@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sinaf.VOL</RootNamespace>
+    <AssemblyName>Sinaf.VOL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="DTOs\PreAviso.cs" />
+    <Compile Include="Financeiro\FinanceiroEdm.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinanceiroEdm.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FinanceiroEdm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinanceiroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FinanceiroEdm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinanceiroEdm.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FinanceiroEntities.cs" />
+    <Compile Include="Financeiro\MovtoSinistro.cs">
+      <DependentUpon>FinanceiroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sies\Certificado.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\Cobertura.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\DominioCampo.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\Emissao.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\ItemOutRiscPess.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\OrgaoProdutor.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\ParcelaPremio.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\Pessoa.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\Produto.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\PR_Login_Result.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\PR_ValidaAlcada_Result.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\PR_ValidarPermissaoMenu_Result.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\SiesEdm.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiesEdm.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\SiesEdm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\SiesEdm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiesEdm.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\SiesEntities.cs" />
+    <Compile Include="Sies\TB_temp2.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sies\Usuario.cs">
+      <DependentUpon>SiesEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\AvisoSinCes.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\AvisoSinistro.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\CausaSinistro.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\CoberturaSinistro.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\IndenizacaoSinistro.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\ParcelaSinistro.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAviso.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoAnalise.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoCampo.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoDetalhe.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoHistorico.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoHistoricoCancelamento.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoHistoricoCartaComunicacao.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoHistoricoJson.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoProcessadoCertificado.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\PreAvisoProcessadoCobertura.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\SinistroCartaEnvio.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\SinistroEdm.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinistroEdm.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\SinistroEdm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\SinistroEdm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinistroEdm.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Sinistro\SinistroEntities.cs" />
+    <Compile Include="Sinistro\TB_Temp1.cs">
+      <DependentUpon>SinistroEdm.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Sinistro\SinistroEdm.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SinistroEdm.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Financeiro\FinanceiroEdm.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinanceiroEdm.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Financeiro\FinanceiroEdm.edmx.diagram">
+      <DependentUpon>FinanceiroEdm.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="Sies\SiesEdm.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SiesEdm.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Sies\SiesEdm.edmx.diagram">
+      <DependentUpon>SiesEdm.edmx</DependentUpon>
+    </None>
+    <None Include="Sinistro\SinistroEdm.edmx.diagram">
+      <DependentUpon>SinistroEdm.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Financeiro\FinanceiroEdm.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinanceiroEdm.edmx</DependentUpon>
+      <LastGenOutput>FinanceiroEdm.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Financeiro\FinanceiroEdm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinanceiroEdm.edmx</DependentUpon>
+      <LastGenOutput>FinanceiroEdm.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sies\SiesEdm.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SiesEdm.edmx</DependentUpon>
+      <LastGenOutput>SiesEdm.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sies\SiesEdm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SiesEdm.edmx</DependentUpon>
+      <LastGenOutput>SiesEdm.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sinistro\SinistroEdm.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SinistroEdm.Context.cs</LastGenOutput>
+      <DependentUpon>SinistroEdm.edmx</DependentUpon>
+    </Content>
+    <Content Include="Sinistro\SinistroEdm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SinistroEdm.edmx</DependentUpon>
+      <LastGenOutput>SinistroEdm.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

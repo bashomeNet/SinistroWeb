@@ -1,0 +1,12 @@
+﻿@model  IEnumerable<SinistroApp.Models.ItemMenuModel>
+
+<ul class="nav child_menu">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <li class="sns-disabled-menu">@Html.ActionLink(item.Texto, item.Action, item.Controller)</li>
+        }
+    }
+</ul>
+

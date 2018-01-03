@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinaf.BLL", "BLL\Sinaf.BLL.csproj", "{85816F28-A66F-4B96-8D94-0B352B8CD0C0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB} = {C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}
+		{2FBAE8D3-2892-49A3-9D84-3B138E22068A} = {2FBAE8D3-2892-49A3-9D84-3B138E22068A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinaf.DAL", "DAL\Sinaf.DAL.csproj", "{2FBAE8D3-2892-49A3-9D84-3B138E22068A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB} = {C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinaf.VOL", "VOL\Sinaf.VOL.csproj", "{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinaf.WebApi.PreAviso", "Sinaf.WebApi.PreAviso\Sinaf.WebApi.PreAviso.csproj", "{FCA0825F-F74C-401C-9CB1-D74767B3C637}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85816F28-A66F-4B96-8D94-0B352B8CD0C0} = {85816F28-A66F-4B96-8D94-0B352B8CD0C0}
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB} = {C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinistroApp", "SinistroApp\SinistroApp.csproj", "{1949BCA7-A99F-4164-AA92-470B46B32850}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85816F28-A66F-4B96-8D94-0B352B8CD0C0} = {85816F28-A66F-4B96-8D94-0B352B8CD0C0}
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB} = {C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85816F28-A66F-4B96-8D94-0B352B8CD0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85816F28-A66F-4B96-8D94-0B352B8CD0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85816F28-A66F-4B96-8D94-0B352B8CD0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85816F28-A66F-4B96-8D94-0B352B8CD0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FBAE8D3-2892-49A3-9D84-3B138E22068A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBAE8D3-2892-49A3-9D84-3B138E22068A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBAE8D3-2892-49A3-9D84-3B138E22068A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBAE8D3-2892-49A3-9D84-3B138E22068A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA0825F-F74C-401C-9CB1-D74767B3C637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA0825F-F74C-401C-9CB1-D74767B3C637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA0825F-F74C-401C-9CB1-D74767B3C637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA0825F-F74C-401C-9CB1-D74767B3C637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1949BCA7-A99F-4164-AA92-470B46B32850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1949BCA7-A99F-4164-AA92-470B46B32850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1949BCA7-A99F-4164-AA92-470B46B32850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1949BCA7-A99F-4164-AA92-470B46B32850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3265EFD9-5884-42E1-9B13-8C04D661FD80}
+	EndGlobalSection
+EndGlobal

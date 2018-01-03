@@ -1,0 +1,1560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SinistroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AvisoSinCes">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdpesseg" />
+            <PropertyRef Name="tpaviso" />
+          </Key>
+          <Property Name="cdaviso" Type="int" Nullable="false" />
+          <Property Name="cdpesseg" Type="int" Nullable="false" />
+          <Property Name="cdrefmon" Type="smallint" Nullable="false" />
+          <Property Name="cdconseg" Type="int" Nullable="false" />
+          <Property Name="cdemi" Type="int" Nullable="false" />
+          <Property Name="tpces" Type="smallint" Nullable="false" />
+          <Property Name="tppcd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="nrordces" Type="int" Nullable="false" />
+          <Property Name="nrapo" Type="int" Nullable="false" />
+          <Property Name="tpaviso" Type="smallint" Nullable="false" />
+          <Property Name="dtatu" Type="datetime" Nullable="false" />
+          <Property Name="dtindeniz" Type="datetime" Nullable="false" />
+          <Property Name="dtreceb" Type="datetime" Nullable="false" />
+          <Property Name="dtress" Type="datetime" Nullable="false" />
+          <Property Name="dtsalv" Type="datetime" Nullable="false" />
+          <Property Name="vltotpago" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotdesp" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotindeniz" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotsalv" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotress" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="stsituacao" Type="smallint" Nullable="false" />
+          <Property Name="obs" Type="char" MaxLength="255" />
+          <Property Name="dtreab" Type="datetime" />
+          <Property Name="dtcanc" Type="datetime" />
+          <Property Name="dtemi" Type="datetime" />
+          <Property Name="dtencerr" Type="datetime" />
+          <Property Name="pcporcentagem" Type="decimal" Precision="7" Scale="4" />
+          <Property Name="vltotrec" Type="decimal" Precision="17" Scale="2" />
+          <Property Name="pcfrqsin" Type="decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="vlfrqsin" Type="decimal" Precision="17" Scale="2" />
+        </EntityType>
+        <EntityType Name="AvisoSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+          </Key>
+          <Property Name="cdaviso" Type="int" Nullable="false" />
+          <Property Name="cdrefmon" Type="smallint" Nullable="false" />
+          <Property Name="cdpes" Type="int" Nullable="false" />
+          <Property Name="cdcausa" Type="int" />
+          <Property Name="cdconseg" Type="int" Nullable="false" />
+          <Property Name="nrapolice" Type="decimal" Precision="13" Scale="0" />
+          <Property Name="nroficial" Type="int" />
+          <Property Name="nravisoramo" Type="int" />
+          <Property Name="dtaviso" Type="datetime" Nullable="false" />
+          <Property Name="dtsin" Type="datetime" Nullable="false" />
+          <Property Name="dtlib" Type="datetime" Nullable="false" />
+          <Property Name="dtencerr" Type="datetime" Nullable="false" />
+          <Property Name="dtreab" Type="datetime" Nullable="false" />
+          <Property Name="dtemi" Type="datetime" Nullable="false" />
+          <Property Name="dtpago" Type="datetime" Nullable="false" />
+          <Property Name="dtcanc" Type="datetime" Nullable="false" />
+          <Property Name="vltotsinistro" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlpagsin" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vldesp" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlsalv" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlress" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="stsituacao" Type="smallint" Nullable="false" />
+          <Property Name="cdemi" Type="int" Nullable="false" />
+          <Property Name="dtatu" Type="datetime" Nullable="false" />
+          <Property Name="indres" Type="char" MaxLength="1" />
+          <Property Name="cdprodsin" Type="int" />
+          <Property Name="incossaceito" Type="char" MaxLength="1" />
+          <Property Name="obs" Type="varchar" MaxLength="1000" />
+          <Property Name="localsinistro" Type="varchar" MaxLength="254" />
+          <Property Name="nrsinlider" Type="int" />
+          <Property Name="dtgeracao" Type="datetime" />
+          <Property Name="inacaojud" Type="char" MaxLength="1" />
+          <Property Name="incorrmonet" Type="char" MaxLength="1" />
+          <Property Name="dtcorrmonet" Type="datetime" />
+          <Property Name="dtultcorrmonet" Type="datetime" />
+          <Property Name="tpcond" Type="smallint" />
+          <Property Name="cdcidade" Type="int" />
+          <Property Name="cdaut" Type="char" MaxLength="10" />
+          <Property Name="nrcgccpf" Type="decimal" Precision="15" Scale="0" />
+          <Property Name="nmben" Type="varchar" MaxLength="40" />
+          <Property Name="inimpressaoetq" Type="char" MaxLength="1" />
+          <Property Name="dtnotif" Type="datetime" />
+          <Property Name="cd_doe" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CausaSinistro">
+          <Key>
+            <PropertyRef Name="cdcausa" />
+          </Key>
+          <Property Name="cdcausa" Type="int" Nullable="false" />
+          <Property Name="nmcausa" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="stsituacao" Type="smallint" Nullable="false" />
+          <Property Name="dtatu" Type="datetime" Nullable="false" />
+          <Property Name="inperdatot" Type="char" MaxLength="1" />
+          <Property Name="cdpontos" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoberturaSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdcobsin" />
+          </Key>
+          <Property Name="cdaviso" Type="int" Nullable="false" />
+          <Property Name="cdcobsin" Type="smallint" Nullable="false" />
+          <Property Name="cdramosg" Type="smallint" Nullable="false" />
+          <Property Name="cdsubram" Type="smallint" Nullable="false" />
+          <Property Name="cdprodut" Type="smallint" />
+          <Property Name="cdcob" Type="smallint" />
+          <Property Name="cditeseg" Type="int" />
+          <Property Name="cdconseg" Type="int" Nullable="false" />
+          <Property Name="nmdesc" Type="char" MaxLength="40" />
+          <Property Name="dtcad" Type="datetime" Nullable="false" />
+          <Property Name="dtatu" Type="datetime" Nullable="false" />
+          <Property Name="dtlib" Type="datetime" Nullable="false" />
+          <Property Name="dtencerr" Type="datetime" Nullable="false" />
+          <Property Name="vltotindeniz" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlpago" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="qtcarencia" Type="smallint" Nullable="false" />
+          <Property Name="qtdest" Type="smallint" Nullable="false" />
+          <Property Name="qtdprorrog" Type="smallint" Nullable="false" />
+          <Property Name="stsituacao" Type="smallint" Nullable="false" />
+          <Property Name="indmaj" Type="smallint" Nullable="false" />
+          <Property Name="cdverbas" Type="smallint" />
+          <Property Name="vlis" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="pcaplicada" Type="decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="cddoenca" Type="int" />
+          <Property Name="cdgrupo" Type="smallint" />
+          <Property Name="pcporcentagem" Type="decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="vldiaria" Type="decimal" Precision="17" Scale="2" />
+          <Property Name="dtinibenef" Type="datetime" />
+          <Property Name="vlpctfraobr" Type="decimal" Precision="17" Scale="2" />
+          <Property Name="qtfranquia" Type="smallint" />
+          <Property Name="qtmaxdiaria" Type="smallint" />
+        </EntityType>
+        <EntityType Name="IndenizacaoSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdcobsin" />
+            <PropertyRef Name="cdpes" />
+            <PropertyRef Name="cdindeniz" />
+          </Key>
+          <Property Name="cdaviso" Type="int" Nullable="false" />
+          <Property Name="cdcobsin" Type="smallint" Nullable="false" />
+          <Property Name="cdpes" Type="int" Nullable="false" />
+          <Property Name="cdindeniz" Type="smallint" Nullable="false" />
+          <Property Name="cdramo" Type="smallint" Nullable="false" />
+          <Property Name="cdsubram" Type="smallint" Nullable="false" />
+          <Property Name="cdusuari" Type="char" MaxLength="12" />
+          <Property Name="cdrefmon" Type="smallint" Nullable="false" />
+          <Property Name="dtgeracao" Type="datetime" Nullable="false" />
+          <Property Name="dtliber" Type="datetime" Nullable="false" />
+          <Property Name="dtatu" Type="datetime" Nullable="false" />
+          <Property Name="pcpartic" Type="decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="qtparc" Type="smallint" Nullable="false" />
+          <Property Name="stsituacao" Type="smallint" Nullable="false" />
+          <Property Name="vlindeniz" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlpago" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="obs" Type="varchar" MaxLength="255" />
+          <Property Name="qtdias" Type="smallint" />
+          <Property Name="dtref" Type="datetime" />
+          <Property Name="cdbcodeb" Type="smallint" />
+          <Property Name="cdbco" Type="smallint" />
+          <Property Name="cdagn" Type="int" />
+          <Property Name="nrctaccr" Type="varchar" MaxLength="15" />
+          <Property Name="tpcreddocpg" Type="smallint" Nullable="false" />
+          <Property Name="dgtagn" Type="char" MaxLength="2" />
+          <Property Name="dgtctaccr" Type="char" MaxLength="2" />
+          <Property Name="obs2" Type="varchar" MaxLength="255" />
+          <Property Name="cdoperacao" Type="int" />
+          <Property Name="inbencon" Type="char" MaxLength="1" />
+          <Property Name="qtparbencon" Type="int" />
+          <Property Name="cdpesrepass" Type="int" />
+          <Property Name="inrepass" Type="char" MaxLength="1" />
+          <Property Name="cdrefmonben" Type="smallint" />
+        </EntityType>
+        <EntityType Name="ParcelaSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdcobsin" />
+            <PropertyRef Name="cdindeniz" />
+            <PropertyRef Name="cdpes" />
+            <PropertyRef Name="cdparsin" />
+          </Key>
+          <Property Name="cdaviso" Type="int" Nullable="false" />
+          <Property Name="cdcobsin" Type="smallint" Nullable="false" />
+          <Property Name="cdindeniz" Type="smallint" Nullable="false" />
+          <Property Name="cdpes" Type="int" Nullable="false" />
+          <Property Name="cdparsin" Type="smallint" Nullable="false" />
+          <Property Name="cdrefmon" Type="smallint" Nullable="false" />
+          <Property Name="dtger" Type="datetime" Nullable="false" />
+          <Property Name="dtven" Type="datetime" Nullable="false" />
+          <Property Name="dtpagto" Type="datetime" Nullable="false" />
+          <Property Name="dtatu" Type="datetime" Nullable="false" />
+          <Property Name="stparcela" Type="smallint" Nullable="false" />
+          <Property Name="vlparc" Type="decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlcorrbencon" Type="decimal" Precision="17" Scale="2" />
+        </EntityType>
+        <EntityType Name="SinistroCartaEnvio">
+          <Key>
+            <PropertyRef Name="cdcartaenvio" />
+          </Key>
+          <Property Name="cdcartaenvio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cdaviso" Type="int" Nullable="false" />
+          <Property Name="tpcarta" Type="smallint" Nullable="false" />
+          <Property Name="dtenvio" Type="datetime" Nullable="false" />
+          <Property Name="dtreceb" Type="datetime" />
+          <Property Name="streceb" Type="smallint" Nullable="false" />
+          <Property Name="dtcad" Type="datetime" Nullable="false" />
+          <Property Name="cdusuari" Type="char" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_PreAviso">
+          <Key>
+            <PropertyRef Name="cd_preavi" />
+          </Key>
+          <Property Name="cd_preavi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tp_orgpdr" Type="smallint" />
+          <Property Name="cd_orgpdr" Type="int" />
+          <Property Name="cd_sit" Type="smallint" />
+          <Property Name="cd_ori" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoAnalise">
+          <Key>
+            <PropertyRef Name="cd_ana" />
+          </Key>
+          <Property Name="cd_ana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavihis" Type="int" />
+          <Property Name="cd_cam" Type="int" />
+          <Property Name="ds_val" Type="varchar" MaxLength="500" />
+          <Property Name="st_dve" Type="smallint" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoCampo">
+          <Key>
+            <PropertyRef Name="cd_cam" />
+          </Key>
+          <Property Name="cd_cam" Type="int" Nullable="false" />
+          <Property Name="nm_cam" Type="nvarchar" MaxLength="50" />
+          <Property Name="ds_cam" Type="nvarchar" MaxLength="100" />
+          <Property Name="nr_ord" Type="int" />
+          <Property Name="st_sit" Type="int" />
+          <Property Name="cd_tip" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoDetalhe">
+          <Key>
+            <PropertyRef Name="cd_preavidtl" />
+          </Key>
+          <Property Name="cd_preavidtl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavi" Type="int" />
+          <Property Name="cd_cam" Type="int" />
+          <Property Name="ds_val" Type="varchar" MaxLength="500" />
+          <Property Name="st_cri" Type="smallint" />
+          <Property Name="ds_msg" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoHistorico">
+          <Key>
+            <PropertyRef Name="cd_preavihis" />
+          </Key>
+          <Property Name="cd_preavihis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavi" Type="int" />
+          <Property Name="tp_mov" Type="smallint" />
+          <Property Name="dt_icl" Type="datetime" />
+          <Property Name="cd_usu" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoHistoricoCancelamento">
+          <Key>
+            <PropertyRef Name="cd_preavican" />
+          </Key>
+          <Property Name="cd_preavican" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavihis" Type="int" />
+          <Property Name="cd_motcan" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoHistoricoCartaComunicacao">
+          <Key>
+            <PropertyRef Name="cd_preavicrt" />
+          </Key>
+          <Property Name="cd_preavicrt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavihis" Type="int" />
+          <Property Name="cd_crt" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoHistoricoJson">
+          <Key>
+            <PropertyRef Name="cd_cmn" />
+          </Key>
+          <Property Name="cd_cmn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavihis" Type="int" />
+          <Property Name="ds_Json" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoProcessadoCertificado">
+          <Key>
+            <PropertyRef Name="cd_preavicer" />
+          </Key>
+          <Property Name="cd_preavicer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavihis" Type="int" />
+          <Property Name="cd_ctt" Type="int" />
+          <Property Name="cd_emi" Type="int" />
+          <Property Name="nr_cer" Type="int" />
+          <Property Name="cd_pdt" Type="smallint" />
+          <Property Name="nr_seqpla" Type="smallint" />
+          <Property Name="dt_inivigpla" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TB_PreAvisoProcessadoCobertura">
+          <Key>
+            <PropertyRef Name="cd_preavicob" />
+          </Key>
+          <Property Name="cd_preavicob" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_preavicer" Type="int" />
+          <Property Name="cd_ctt" Type="int" />
+          <Property Name="cd_itmsgr" Type="int" />
+          <Property Name="nr_cer" Type="int" />
+          <Property Name="cd_pdt" Type="smallint" />
+          <Property Name="cd_cob" Type="smallint" />
+          <Property Name="cd_movcob" Type="smallint" />
+          <Property Name="cd_avi" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_Temp1">
+          <Key>
+            <PropertyRef Name="cd_aviso" />
+          </Key>
+          <Property Name="cd_aviso" Type="int" Nullable="false" />
+          <Property Name="cd_pessoa" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo">
+          <End Role="TB_PreAvisoCampo" Type="Self.TB_PreAvisoCampo" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoAnalise" Type="Self.TB_PreAvisoAnalise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoCampo">
+              <PropertyRef Name="cd_cam" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoAnalise">
+              <PropertyRef Name="cd_cam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="Self.TB_PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoAnalise" Type="Self.TB_PreAvisoAnalise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoAnalise">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoDetalhe_x_TB_PreAviso">
+          <End Role="TB_PreAviso" Type="Self.TB_PreAviso" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoDetalhe" Type="Self.TB_PreAvisoDetalhe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAviso">
+              <PropertyRef Name="cd_preavi" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoDetalhe">
+              <PropertyRef Name="cd_preavi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo">
+          <End Role="TB_PreAvisoCampo" Type="Self.TB_PreAvisoCampo" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoDetalhe" Type="Self.TB_PreAvisoDetalhe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoCampo">
+              <PropertyRef Name="cd_cam" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoDetalhe">
+              <PropertyRef Name="cd_cam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistorico_x_TB_PreAviso">
+          <End Role="TB_PreAviso" Type="Self.TB_PreAviso" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistorico" Type="Self.TB_PreAvisoHistorico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAviso">
+              <PropertyRef Name="cd_preavi" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="Self.TB_PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistoricoCancelamento" Type="Self.TB_PreAvisoHistoricoCancelamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistoricoCancelamento">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="Self.TB_PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistoricoCartaComunicacao" Type="Self.TB_PreAvisoHistoricoCartaComunicacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistoricoCartaComunicacao">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="Self.TB_PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistoricoJson" Type="Self.TB_PreAvisoHistoricoJson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistoricoJson">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="Self.TB_PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoProcessadoCertificado" Type="Self.TB_PreAvisoProcessadoCertificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoProcessadoCertificado">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro">
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoProcessadoCobertura" Type="Self.TB_PreAvisoProcessadoCobertura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvisoSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoProcessadoCobertura">
+              <PropertyRef Name="cd_avi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado">
+          <End Role="TB_PreAvisoProcessadoCertificado" Type="Self.TB_PreAvisoProcessadoCertificado" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoProcessadoCobertura" Type="Self.TB_PreAvisoProcessadoCobertura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoProcessadoCertificado">
+              <PropertyRef Name="cd_preavicer" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoProcessadoCobertura">
+              <PropertyRef Name="cd_preavicer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkASICBSI">
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="1" />
+          <End Role="CoberturaSinistro" Type="Self.CoberturaSinistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvisoSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Principal>
+            <Dependent Role="CoberturaSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCAUSIASI">
+          <End Role="CausaSinistro" Type="Self.CausaSinistro" Multiplicity="0..1" />
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CausaSinistro">
+              <PropertyRef Name="cdcausa" />
+            </Principal>
+            <Dependent Role="AvisoSinistro">
+              <PropertyRef Name="cdcausa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCBSIIDNSI">
+          <End Role="CoberturaSinistro" Type="Self.CoberturaSinistro" Multiplicity="1" />
+          <End Role="IndenizacaoSinistro" Type="Self.IndenizacaoSinistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoberturaSinistro">
+              <PropertyRef Name="cdaviso" />
+              <PropertyRef Name="cdcobsin" />
+            </Principal>
+            <Dependent Role="IndenizacaoSinistro">
+              <PropertyRef Name="cdaviso" />
+              <PropertyRef Name="cdcobsin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkSinistroCartaEnvio_X_AvisoSinistro">
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="1" />
+          <End Role="SinistroCartaEnvio" Type="Self.SinistroCartaEnvio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvisoSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Principal>
+            <Dependent Role="SinistroCartaEnvio">
+              <PropertyRef Name="cdaviso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SinistroModelStoreContainer">
+          <EntitySet Name="AvisoSinCes" EntityType="Self.AvisoSinCes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AvisoSinistro" EntityType="Self.AvisoSinistro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CausaSinistro" EntityType="Self.CausaSinistro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoberturaSinistro" EntityType="Self.CoberturaSinistro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndenizacaoSinistro" EntityType="Self.IndenizacaoSinistro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParcelaSinistro" EntityType="Self.ParcelaSinistro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinistroCartaEnvio" EntityType="Self.SinistroCartaEnvio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAviso" EntityType="Self.TB_PreAviso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoAnalise" EntityType="Self.TB_PreAvisoAnalise" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoCampo" EntityType="Self.TB_PreAvisoCampo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoDetalhe" EntityType="Self.TB_PreAvisoDetalhe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoHistorico" EntityType="Self.TB_PreAvisoHistorico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoHistoricoCancelamento" EntityType="Self.TB_PreAvisoHistoricoCancelamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoHistoricoCartaComunicacao" EntityType="Self.TB_PreAvisoHistoricoCartaComunicacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoHistoricoJson" EntityType="Self.TB_PreAvisoHistoricoJson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoProcessadoCertificado" EntityType="Self.TB_PreAvisoProcessadoCertificado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PreAvisoProcessadoCobertura" EntityType="Self.TB_PreAvisoProcessadoCobertura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Temp1" EntityType="Self.TB_Temp1" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo" Association="Self.fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo">
+            <End Role="TB_PreAvisoCampo" EntitySet="TB_PreAvisoCampo" />
+            <End Role="TB_PreAvisoAnalise" EntitySet="TB_PreAvisoAnalise" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoAnalise" EntitySet="TB_PreAvisoAnalise" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoDetalhe_x_TB_PreAviso" Association="Self.fk_TB_PreAvisoDetalhe_x_TB_PreAviso">
+            <End Role="TB_PreAviso" EntitySet="TB_PreAviso" />
+            <End Role="TB_PreAvisoDetalhe" EntitySet="TB_PreAvisoDetalhe" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo" Association="Self.fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo">
+            <End Role="TB_PreAvisoCampo" EntitySet="TB_PreAvisoCampo" />
+            <End Role="TB_PreAvisoDetalhe" EntitySet="TB_PreAvisoDetalhe" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistorico_x_TB_PreAviso" Association="Self.fk_TB_PreAvisoHistorico_x_TB_PreAviso">
+            <End Role="TB_PreAviso" EntitySet="TB_PreAviso" />
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoHistoricoCancelamento" EntitySet="TB_PreAvisoHistoricoCancelamento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoHistoricoCartaComunicacao" EntitySet="TB_PreAvisoHistoricoCartaComunicacao" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoHistoricoJson" EntitySet="TB_PreAvisoHistoricoJson" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoProcessadoCertificado" EntitySet="TB_PreAvisoProcessadoCertificado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro" Association="Self.fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro">
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+            <End Role="TB_PreAvisoProcessadoCobertura" EntitySet="TB_PreAvisoProcessadoCobertura" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado" Association="Self.fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado">
+            <End Role="TB_PreAvisoProcessadoCertificado" EntitySet="TB_PreAvisoProcessadoCertificado" />
+            <End Role="TB_PreAvisoProcessadoCobertura" EntitySet="TB_PreAvisoProcessadoCobertura" />
+          </AssociationSet>
+          <AssociationSet Name="fkASICBSI" Association="Self.fkASICBSI">
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+            <End Role="CoberturaSinistro" EntitySet="CoberturaSinistro" />
+          </AssociationSet>
+          <AssociationSet Name="fkCAUSIASI" Association="Self.fkCAUSIASI">
+            <End Role="CausaSinistro" EntitySet="CausaSinistro" />
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+          </AssociationSet>
+          <AssociationSet Name="fkCBSIIDNSI" Association="Self.fkCBSIIDNSI">
+            <End Role="CoberturaSinistro" EntitySet="CoberturaSinistro" />
+            <End Role="IndenizacaoSinistro" EntitySet="IndenizacaoSinistro" />
+          </AssociationSet>
+          <AssociationSet Name="fkSinistroCartaEnvio_X_AvisoSinistro" Association="Self.fkSinistroCartaEnvio_X_AvisoSinistro">
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+            <End Role="SinistroCartaEnvio" EntitySet="SinistroCartaEnvio" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SinistroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AvisoSinCes">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdpesseg" />
+            <PropertyRef Name="tpaviso" />
+          </Key>
+          <Property Name="cdaviso" Type="Int32" Nullable="false" />
+          <Property Name="cdpesseg" Type="Int32" Nullable="false" />
+          <Property Name="cdrefmon" Type="Int16" Nullable="false" />
+          <Property Name="cdconseg" Type="Int32" Nullable="false" />
+          <Property Name="cdemi" Type="Int32" Nullable="false" />
+          <Property Name="tpces" Type="Int16" Nullable="false" />
+          <Property Name="tppcd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nrordces" Type="Int32" Nullable="false" />
+          <Property Name="nrapo" Type="Int32" Nullable="false" />
+          <Property Name="tpaviso" Type="Int16" Nullable="false" />
+          <Property Name="dtatu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtindeniz" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtreceb" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtress" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtsalv" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vltotpago" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotdesp" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotindeniz" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotsalv" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vltotress" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="stsituacao" Type="Int16" Nullable="false" />
+          <Property Name="obs" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="dtreab" Type="DateTime" Precision="3" />
+          <Property Name="dtcanc" Type="DateTime" Precision="3" />
+          <Property Name="dtemi" Type="DateTime" Precision="3" />
+          <Property Name="dtencerr" Type="DateTime" Precision="3" />
+          <Property Name="pcporcentagem" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="vltotrec" Type="Decimal" Precision="17" Scale="2" />
+          <Property Name="pcfrqsin" Type="Decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="vlfrqsin" Type="Decimal" Precision="17" Scale="2" />
+        </EntityType>
+        <EntityType Name="AvisoSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+          </Key>
+          <Property Name="cdaviso" Type="Int32" Nullable="false" />
+          <Property Name="cdrefmon" Type="Int16" Nullable="false" />
+          <Property Name="cdpes" Type="Int32" Nullable="false" />
+          <Property Name="cdcausa" Type="Int32" />
+          <Property Name="cdconseg" Type="Int32" Nullable="false" />
+          <Property Name="nrapolice" Type="Decimal" Precision="13" Scale="0" />
+          <Property Name="nroficial" Type="Int32" />
+          <Property Name="nravisoramo" Type="Int32" />
+          <Property Name="dtaviso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtsin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtlib" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtencerr" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtreab" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtemi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtpago" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtcanc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vltotsinistro" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlpagsin" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vldesp" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlsalv" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlress" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="stsituacao" Type="Int16" Nullable="false" />
+          <Property Name="cdemi" Type="Int32" Nullable="false" />
+          <Property Name="dtatu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="indres" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cdprodsin" Type="Int32" />
+          <Property Name="incossaceito" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="obs" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="localsinistro" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="nrsinlider" Type="Int32" />
+          <Property Name="dtgeracao" Type="DateTime" Precision="3" />
+          <Property Name="inacaojud" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="incorrmonet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="dtcorrmonet" Type="DateTime" Precision="3" />
+          <Property Name="dtultcorrmonet" Type="DateTime" Precision="3" />
+          <Property Name="tpcond" Type="Int16" />
+          <Property Name="cdcidade" Type="Int32" />
+          <Property Name="cdaut" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="nrcgccpf" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="nmben" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="inimpressaoetq" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="dtnotif" Type="DateTime" Precision="3" />
+          <Property Name="cd_doe" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_PreAvisoProcessadoCobertura" Relationship="Self.fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro" FromRole="AvisoSinistro" ToRole="TB_PreAvisoProcessadoCobertura" />
+          <NavigationProperty Name="CoberturaSinistro" Relationship="Self.fkASICBSI" FromRole="AvisoSinistro" ToRole="CoberturaSinistro" />
+          <NavigationProperty Name="CausaSinistro" Relationship="Self.fkCAUSIASI" FromRole="AvisoSinistro" ToRole="CausaSinistro" />
+          <NavigationProperty Name="SinistroCartaEnvio" Relationship="Self.fkSinistroCartaEnvio_X_AvisoSinistro" FromRole="AvisoSinistro" ToRole="SinistroCartaEnvio" />
+        </EntityType>
+        <EntityType Name="CausaSinistro">
+          <Key>
+            <PropertyRef Name="cdcausa" />
+          </Key>
+          <Property Name="cdcausa" Type="Int32" Nullable="false" />
+          <Property Name="nmcausa" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="stsituacao" Type="Int16" Nullable="false" />
+          <Property Name="dtatu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="inperdatot" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cdpontos" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="AvisoSinistro" Relationship="Self.fkCAUSIASI" FromRole="CausaSinistro" ToRole="AvisoSinistro" />
+        </EntityType>
+        <EntityType Name="CoberturaSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdcobsin" />
+          </Key>
+          <Property Name="cdaviso" Type="Int32" Nullable="false" />
+          <Property Name="cdcobsin" Type="Int16" Nullable="false" />
+          <Property Name="cdramosg" Type="Int16" Nullable="false" />
+          <Property Name="cdsubram" Type="Int16" Nullable="false" />
+          <Property Name="cdprodut" Type="Int16" />
+          <Property Name="cdcob" Type="Int16" />
+          <Property Name="cditeseg" Type="Int32" />
+          <Property Name="cdconseg" Type="Int32" Nullable="false" />
+          <Property Name="nmdesc" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="dtcad" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtatu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtlib" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtencerr" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vltotindeniz" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlpago" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="qtcarencia" Type="Int16" Nullable="false" />
+          <Property Name="qtdest" Type="Int16" Nullable="false" />
+          <Property Name="qtdprorrog" Type="Int16" Nullable="false" />
+          <Property Name="stsituacao" Type="Int16" Nullable="false" />
+          <Property Name="indmaj" Type="Int16" Nullable="false" />
+          <Property Name="cdverbas" Type="Int16" />
+          <Property Name="vlis" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="pcaplicada" Type="Decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="cddoenca" Type="Int32" />
+          <Property Name="cdgrupo" Type="Int16" />
+          <Property Name="pcporcentagem" Type="Decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="vldiaria" Type="Decimal" Precision="17" Scale="2" />
+          <Property Name="dtinibenef" Type="DateTime" Precision="3" />
+          <Property Name="vlpctfraobr" Type="Decimal" Precision="17" Scale="2" />
+          <Property Name="qtfranquia" Type="Int16" />
+          <Property Name="qtmaxdiaria" Type="Int16" />
+          <NavigationProperty Name="AvisoSinistro" Relationship="Self.fkASICBSI" FromRole="CoberturaSinistro" ToRole="AvisoSinistro" />
+          <NavigationProperty Name="IndenizacaoSinistro" Relationship="Self.fkCBSIIDNSI" FromRole="CoberturaSinistro" ToRole="IndenizacaoSinistro" />
+        </EntityType>
+        <EntityType Name="IndenizacaoSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdcobsin" />
+            <PropertyRef Name="cdpes" />
+            <PropertyRef Name="cdindeniz" />
+          </Key>
+          <Property Name="cdaviso" Type="Int32" Nullable="false" />
+          <Property Name="cdcobsin" Type="Int16" Nullable="false" />
+          <Property Name="cdpes" Type="Int32" Nullable="false" />
+          <Property Name="cdindeniz" Type="Int16" Nullable="false" />
+          <Property Name="cdramo" Type="Int16" Nullable="false" />
+          <Property Name="cdsubram" Type="Int16" Nullable="false" />
+          <Property Name="cdusuari" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="cdrefmon" Type="Int16" Nullable="false" />
+          <Property Name="dtgeracao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtliber" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtatu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="pcpartic" Type="Decimal" Precision="7" Scale="4" Nullable="false" />
+          <Property Name="qtparc" Type="Int16" Nullable="false" />
+          <Property Name="stsituacao" Type="Int16" Nullable="false" />
+          <Property Name="vlindeniz" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlpago" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="obs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="qtdias" Type="Int16" />
+          <Property Name="dtref" Type="DateTime" Precision="3" />
+          <Property Name="cdbcodeb" Type="Int16" />
+          <Property Name="cdbco" Type="Int16" />
+          <Property Name="cdagn" Type="Int32" />
+          <Property Name="nrctaccr" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="tpcreddocpg" Type="Int16" Nullable="false" />
+          <Property Name="dgtagn" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="dgtctaccr" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="obs2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cdoperacao" Type="Int32" />
+          <Property Name="inbencon" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="qtparbencon" Type="Int32" />
+          <Property Name="cdpesrepass" Type="Int32" />
+          <Property Name="inrepass" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cdrefmonben" Type="Int16" />
+          <NavigationProperty Name="CoberturaSinistro" Relationship="Self.fkCBSIIDNSI" FromRole="IndenizacaoSinistro" ToRole="CoberturaSinistro" />
+        </EntityType>
+        <EntityType Name="ParcelaSinistro">
+          <Key>
+            <PropertyRef Name="cdaviso" />
+            <PropertyRef Name="cdcobsin" />
+            <PropertyRef Name="cdindeniz" />
+            <PropertyRef Name="cdpes" />
+            <PropertyRef Name="cdparsin" />
+          </Key>
+          <Property Name="cdaviso" Type="Int32" Nullable="false" />
+          <Property Name="cdcobsin" Type="Int16" Nullable="false" />
+          <Property Name="cdindeniz" Type="Int16" Nullable="false" />
+          <Property Name="cdpes" Type="Int32" Nullable="false" />
+          <Property Name="cdparsin" Type="Int16" Nullable="false" />
+          <Property Name="cdrefmon" Type="Int16" Nullable="false" />
+          <Property Name="dtger" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtven" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtpagto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtatu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="stparcela" Type="Int16" Nullable="false" />
+          <Property Name="vlparc" Type="Decimal" Precision="17" Scale="2" Nullable="false" />
+          <Property Name="vlcorrbencon" Type="Decimal" Precision="17" Scale="2" />
+        </EntityType>
+        <EntityType Name="SinistroCartaEnvio">
+          <Key>
+            <PropertyRef Name="cdcartaenvio" />
+          </Key>
+          <Property Name="cdcartaenvio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cdaviso" Type="Int32" Nullable="false" />
+          <Property Name="tpcarta" Type="Int16" Nullable="false" />
+          <Property Name="dtenvio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtreceb" Type="DateTime" Precision="3" />
+          <Property Name="streceb" Type="Int16" Nullable="false" />
+          <Property Name="dtcad" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cdusuari" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AvisoSinistro" Relationship="Self.fkSinistroCartaEnvio_X_AvisoSinistro" FromRole="SinistroCartaEnvio" ToRole="AvisoSinistro" />
+        </EntityType>
+        <EntityType Name="PreAviso">
+          <Key>
+            <PropertyRef Name="cd_preavi" />
+          </Key>
+          <Property Name="cd_preavi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tp_orgpdr" Type="Int16" />
+          <Property Name="cd_orgpdr" Type="Int32" />
+          <Property Name="cd_sit" Type="Int16" />
+          <Property Name="cd_ori" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_PreAvisoDetalhe" Relationship="Self.fk_TB_PreAvisoDetalhe_x_TB_PreAviso" FromRole="TB_PreAviso" ToRole="TB_PreAvisoDetalhe" />
+          <NavigationProperty Name="TB_PreAvisoHistorico" Relationship="Self.fk_TB_PreAvisoHistorico_x_TB_PreAviso" FromRole="TB_PreAviso" ToRole="TB_PreAvisoHistorico" />
+        </EntityType>
+        <EntityType Name="PreAvisoAnalise">
+          <Key>
+            <PropertyRef Name="cd_ana" />
+          </Key>
+          <Property Name="cd_ana" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavihis" Type="Int32" />
+          <Property Name="cd_cam" Type="Int32" />
+          <Property Name="ds_val" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="st_dve" Type="Int16" />
+          <NavigationProperty Name="TB_PreAvisoHistorico" Relationship="Self.fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoAnalise" ToRole="TB_PreAvisoHistorico" />
+          <NavigationProperty Name="TB_PreAvisoCampo" Relationship="SinistroModel.fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo" FromRole="PreAvisoAnalise" ToRole="TB_PreAvisoCampo" />
+        </EntityType>
+        <EntityType Name="PreAvisoDetalhe">
+          <Key>
+            <PropertyRef Name="cd_preavidtl" />
+          </Key>
+          <Property Name="cd_preavidtl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavi" Type="Int32" />
+          <Property Name="cd_cam" Type="Int32" />
+          <Property Name="ds_val" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="st_cri" Type="Int16" />
+          <Property Name="ds_msg" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_PreAviso" Relationship="Self.fk_TB_PreAvisoDetalhe_x_TB_PreAviso" FromRole="TB_PreAvisoDetalhe" ToRole="TB_PreAviso" />
+          <NavigationProperty Name="TB_PreAvisoCampo" Relationship="SinistroModel.fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo" FromRole="PreAvisoDetalhe" ToRole="TB_PreAvisoCampo" />
+        </EntityType>
+        <EntityType Name="PreAvisoHistorico">
+          <Key>
+            <PropertyRef Name="cd_preavihis" />
+          </Key>
+          <Property Name="cd_preavihis" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavi" Type="Int32" />
+          <Property Name="tp_mov" Type="Int16" />
+          <Property Name="dt_icl" Type="DateTime" Precision="3" />
+          <Property Name="cd_usu" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_PreAviso" Relationship="Self.fk_TB_PreAvisoHistorico_x_TB_PreAviso" FromRole="TB_PreAvisoHistorico" ToRole="TB_PreAviso" />
+          <NavigationProperty Name="TB_PreAvisoAnalise" Relationship="Self.fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistorico" ToRole="TB_PreAvisoAnalise" />
+          <NavigationProperty Name="TB_PreAvisoHistoricoCancelamento" Relationship="Self.fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistorico" ToRole="TB_PreAvisoHistoricoCancelamento" />
+          <NavigationProperty Name="TB_PreAvisoHistoricoCartaComunicacao" Relationship="Self.fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistorico" ToRole="TB_PreAvisoHistoricoCartaComunicacao" />
+          <NavigationProperty Name="TB_PreAvisoHistoricoJson" Relationship="Self.fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistorico" ToRole="TB_PreAvisoHistoricoJson" />
+          <NavigationProperty Name="TB_PreAvisoProcessadoCertificado" Relationship="Self.fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistorico" ToRole="TB_PreAvisoProcessadoCertificado" />
+        </EntityType>
+        <EntityType Name="PreAvisoHistoricoCancelamento">
+          <Key>
+            <PropertyRef Name="cd_preavican" />
+          </Key>
+          <Property Name="cd_preavican" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavihis" Type="Int32" />
+          <Property Name="cd_motcan" Type="Int32" />
+          <NavigationProperty Name="TB_PreAvisoHistorico" Relationship="Self.fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistoricoCancelamento" ToRole="TB_PreAvisoHistorico" />
+        </EntityType>
+        <EntityType Name="PreAvisoHistoricoCartaComunicacao">
+          <Key>
+            <PropertyRef Name="cd_preavicrt" />
+          </Key>
+          <Property Name="cd_preavicrt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavihis" Type="Int32" />
+          <Property Name="cd_crt" Type="Int32" />
+          <NavigationProperty Name="TB_PreAvisoHistorico" Relationship="Self.fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistoricoCartaComunicacao" ToRole="TB_PreAvisoHistorico" />
+        </EntityType>
+        <EntityType Name="PreAvisoHistoricoJson">
+          <Key>
+            <PropertyRef Name="cd_cmn" />
+          </Key>
+          <Property Name="cd_cmn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavihis" Type="Int32" />
+          <Property Name="ds_Json" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_PreAvisoHistorico" Relationship="Self.fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoHistoricoJson" ToRole="TB_PreAvisoHistorico" />
+        </EntityType>
+        <EntityType Name="PreAvisoProcessadoCertificado">
+          <Key>
+            <PropertyRef Name="cd_preavicer" />
+          </Key>
+          <Property Name="cd_preavicer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavihis" Type="Int32" />
+          <Property Name="cd_ctt" Type="Int32" />
+          <Property Name="cd_emi" Type="Int32" />
+          <Property Name="nr_cer" Type="Int32" />
+          <Property Name="cd_pdt" Type="Int16" />
+          <Property Name="nr_seqpla" Type="Int16" />
+          <Property Name="dt_inivigpla" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_PreAvisoHistorico" Relationship="Self.fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico" FromRole="TB_PreAvisoProcessadoCertificado" ToRole="TB_PreAvisoHistorico" />
+          <NavigationProperty Name="TB_PreAvisoProcessadoCobertura" Relationship="Self.fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado" FromRole="TB_PreAvisoProcessadoCertificado" ToRole="TB_PreAvisoProcessadoCobertura" />
+        </EntityType>
+        <EntityType Name="PreAvisoProcessadoCobertura">
+          <Key>
+            <PropertyRef Name="cd_preavicob" />
+          </Key>
+          <Property Name="cd_preavicob" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_preavicer" Type="Int32" />
+          <Property Name="cd_ctt" Type="Int32" />
+          <Property Name="cd_itmsgr" Type="Int32" />
+          <Property Name="nr_cer" Type="Int32" />
+          <Property Name="cd_pdt" Type="Int16" />
+          <Property Name="cd_cob" Type="Int16" />
+          <Property Name="cd_movcob" Type="Int16" />
+          <Property Name="cd_avi" Type="Int32" />
+          <NavigationProperty Name="AvisoSinistro" Relationship="Self.fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro" FromRole="TB_PreAvisoProcessadoCobertura" ToRole="AvisoSinistro" />
+          <NavigationProperty Name="TB_PreAvisoProcessadoCertificado" Relationship="Self.fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado" FromRole="TB_PreAvisoProcessadoCobertura" ToRole="TB_PreAvisoProcessadoCertificado" />
+        </EntityType>
+        <Association Name="fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro">
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoProcessadoCobertura" Type="SinistroModel.PreAvisoProcessadoCobertura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvisoSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoProcessadoCobertura">
+              <PropertyRef Name="cd_avi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkASICBSI">
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="1" />
+          <End Role="CoberturaSinistro" Type="Self.CoberturaSinistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvisoSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Principal>
+            <Dependent Role="CoberturaSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCAUSIASI">
+          <End Role="CausaSinistro" Type="Self.CausaSinistro" Multiplicity="0..1" />
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CausaSinistro">
+              <PropertyRef Name="cdcausa" />
+            </Principal>
+            <Dependent Role="AvisoSinistro">
+              <PropertyRef Name="cdcausa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkSinistroCartaEnvio_X_AvisoSinistro">
+          <End Role="AvisoSinistro" Type="Self.AvisoSinistro" Multiplicity="1" />
+          <End Role="SinistroCartaEnvio" Type="Self.SinistroCartaEnvio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvisoSinistro">
+              <PropertyRef Name="cdaviso" />
+            </Principal>
+            <Dependent Role="SinistroCartaEnvio">
+              <PropertyRef Name="cdaviso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCBSIIDNSI">
+          <End Role="CoberturaSinistro" Type="Self.CoberturaSinistro" Multiplicity="1" />
+          <End Role="IndenizacaoSinistro" Type="Self.IndenizacaoSinistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoberturaSinistro">
+              <PropertyRef Name="cdaviso" />
+              <PropertyRef Name="cdcobsin" />
+            </Principal>
+            <Dependent Role="IndenizacaoSinistro">
+              <PropertyRef Name="cdaviso" />
+              <PropertyRef Name="cdcobsin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoDetalhe_x_TB_PreAviso">
+          <End Role="TB_PreAviso" Type="SinistroModel.PreAviso" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoDetalhe" Type="SinistroModel.PreAvisoDetalhe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAviso">
+              <PropertyRef Name="cd_preavi" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoDetalhe">
+              <PropertyRef Name="cd_preavi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistorico_x_TB_PreAviso">
+          <End Role="TB_PreAviso" Type="SinistroModel.PreAviso" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistorico" Type="SinistroModel.PreAvisoHistorico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAviso">
+              <PropertyRef Name="cd_preavi" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="SinistroModel.PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoAnalise" Type="SinistroModel.PreAvisoAnalise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoAnalise">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="SinistroModel.PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistoricoCancelamento" Type="SinistroModel.PreAvisoHistoricoCancelamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistoricoCancelamento">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="SinistroModel.PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistoricoCartaComunicacao" Type="SinistroModel.PreAvisoHistoricoCartaComunicacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistoricoCartaComunicacao">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="SinistroModel.PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoHistoricoJson" Type="SinistroModel.PreAvisoHistoricoJson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoHistoricoJson">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico">
+          <End Role="TB_PreAvisoHistorico" Type="SinistroModel.PreAvisoHistorico" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoProcessadoCertificado" Type="SinistroModel.PreAvisoProcessadoCertificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoHistorico">
+              <PropertyRef Name="cd_preavihis" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoProcessadoCertificado">
+              <PropertyRef Name="cd_preavihis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado">
+          <End Role="TB_PreAvisoProcessadoCertificado" Type="SinistroModel.PreAvisoProcessadoCertificado" Multiplicity="0..1" />
+          <End Role="TB_PreAvisoProcessadoCobertura" Type="SinistroModel.PreAvisoProcessadoCobertura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoProcessadoCertificado">
+              <PropertyRef Name="cd_preavicer" />
+            </Principal>
+            <Dependent Role="TB_PreAvisoProcessadoCobertura">
+              <PropertyRef Name="cd_preavicer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SinistroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AvisoSinCes" EntityType="Self.AvisoSinCes" />
+          <EntitySet Name="AvisoSinistro" EntityType="Self.AvisoSinistro" />
+          <EntitySet Name="CausaSinistro" EntityType="Self.CausaSinistro" />
+          <EntitySet Name="CoberturaSinistro" EntityType="Self.CoberturaSinistro" />
+          <EntitySet Name="IndenizacaoSinistro" EntityType="Self.IndenizacaoSinistro" />
+          <EntitySet Name="ParcelaSinistro" EntityType="Self.ParcelaSinistro" />
+          <EntitySet Name="SinistroCartaEnvio" EntityType="Self.SinistroCartaEnvio" />
+          <EntitySet Name="TB_PreAviso" EntityType="SinistroModel.PreAviso" />
+          <EntitySet Name="TB_PreAvisoAnalise" EntityType="SinistroModel.PreAvisoAnalise" />
+          <EntitySet Name="TB_PreAvisoDetalhe" EntityType="SinistroModel.PreAvisoDetalhe" />
+          <EntitySet Name="TB_PreAvisoHistorico" EntityType="SinistroModel.PreAvisoHistorico" />
+          <EntitySet Name="TB_PreAvisoHistoricoCancelamento" EntityType="SinistroModel.PreAvisoHistoricoCancelamento" />
+          <EntitySet Name="TB_PreAvisoHistoricoCartaComunicacao" EntityType="SinistroModel.PreAvisoHistoricoCartaComunicacao" />
+          <EntitySet Name="TB_PreAvisoHistoricoJson" EntityType="SinistroModel.PreAvisoHistoricoJson" />
+          <EntitySet Name="TB_PreAvisoProcessadoCertificado" EntityType="SinistroModel.PreAvisoProcessadoCertificado" />
+          <EntitySet Name="TB_PreAvisoProcessadoCobertura" EntityType="SinistroModel.PreAvisoProcessadoCobertura" />
+          <AssociationSet Name="fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro" Association="Self.fk_TB_PreAvisoProcessadoCobertura_x_AvisoSinistro">
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+            <End Role="TB_PreAvisoProcessadoCobertura" EntitySet="TB_PreAvisoProcessadoCobertura" />
+          </AssociationSet>
+          <AssociationSet Name="fkASICBSI" Association="Self.fkASICBSI">
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+            <End Role="CoberturaSinistro" EntitySet="CoberturaSinistro" />
+          </AssociationSet>
+          <AssociationSet Name="fkCAUSIASI" Association="Self.fkCAUSIASI">
+            <End Role="CausaSinistro" EntitySet="CausaSinistro" />
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+          </AssociationSet>
+          <AssociationSet Name="fkSinistroCartaEnvio_X_AvisoSinistro" Association="Self.fkSinistroCartaEnvio_X_AvisoSinistro">
+            <End Role="AvisoSinistro" EntitySet="AvisoSinistro" />
+            <End Role="SinistroCartaEnvio" EntitySet="SinistroCartaEnvio" />
+          </AssociationSet>
+          <AssociationSet Name="fkCBSIIDNSI" Association="Self.fkCBSIIDNSI">
+            <End Role="CoberturaSinistro" EntitySet="CoberturaSinistro" />
+            <End Role="IndenizacaoSinistro" EntitySet="IndenizacaoSinistro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoDetalhe_x_TB_PreAviso" Association="Self.fk_TB_PreAvisoDetalhe_x_TB_PreAviso">
+            <End Role="TB_PreAviso" EntitySet="TB_PreAviso" />
+            <End Role="TB_PreAvisoDetalhe" EntitySet="TB_PreAvisoDetalhe" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistorico_x_TB_PreAviso" Association="Self.fk_TB_PreAvisoHistorico_x_TB_PreAviso">
+            <End Role="TB_PreAviso" EntitySet="TB_PreAviso" />
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoAnalise_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoAnalise" EntitySet="TB_PreAvisoAnalise" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoHistoricoCancelamento_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoHistoricoCancelamento" EntitySet="TB_PreAvisoHistoricoCancelamento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoHistoricoCartaComunicacao_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoHistoricoCartaComunicacao" EntitySet="TB_PreAvisoHistoricoCartaComunicacao" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoHistoricoJson_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoHistoricoJson" EntitySet="TB_PreAvisoHistoricoJson" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico" Association="Self.fk_TB_PreAvisoProcessadoCertificado_x_TB_PreAvisoHistorico">
+            <End Role="TB_PreAvisoHistorico" EntitySet="TB_PreAvisoHistorico" />
+            <End Role="TB_PreAvisoProcessadoCertificado" EntitySet="TB_PreAvisoProcessadoCertificado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado" Association="Self.fk_TB_PreAvisoProcessadoCobertura_x_TB_PreAvisoProcessadoCertificado">
+            <End Role="TB_PreAvisoProcessadoCertificado" EntitySet="TB_PreAvisoProcessadoCertificado" />
+            <End Role="TB_PreAvisoProcessadoCobertura" EntitySet="TB_PreAvisoProcessadoCobertura" />
+          </AssociationSet>
+          <EntitySet Name="TB_Temp1" EntityType="SinistroModel.TB_Temp1" />
+          <EntitySet Name="TB_PreAvisoCampo" EntityType="SinistroModel.PreAvisoCampo" />
+          <AssociationSet Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo" Association="SinistroModel.fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo">
+            <End Role="TB_PreAvisoCampo" EntitySet="TB_PreAvisoCampo" />
+            <End Role="PreAvisoAnalise" EntitySet="TB_PreAvisoAnalise" />
+          </AssociationSet>
+          <AssociationSet Name="fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo" Association="SinistroModel.fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo">
+            <End Role="TB_PreAvisoCampo" EntitySet="TB_PreAvisoCampo" />
+            <End Role="PreAvisoDetalhe" EntitySet="TB_PreAvisoDetalhe" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TB_Temp1">
+          <Key>
+            <PropertyRef Name="cd_aviso" />
+          </Key>
+          <Property Name="cd_aviso" Type="Int32" Nullable="false" />
+          <Property Name="cd_pessoa" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PreAvisoCampo">
+          <Key>
+            <PropertyRef Name="cd_cam" />
+          </Key>
+          <Property Name="cd_cam" Type="Int32" Nullable="false" />
+          <Property Name="nm_cam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ds_cam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nr_ord" Type="Int32" />
+          <Property Name="st_sit" Type="Int32" />
+          <Property Name="cd_tip" Type="Int32" />
+          <NavigationProperty Name="TB_PreAvisoAnalise" Relationship="SinistroModel.fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo" FromRole="TB_PreAvisoCampo" ToRole="PreAvisoAnalise" />
+          <NavigationProperty Name="TB_PreAvisoDetalhe" Relationship="SinistroModel.fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo" FromRole="TB_PreAvisoCampo" ToRole="PreAvisoDetalhe" />
+        </EntityType>
+        <Association Name="fk_TB_PreAvisoAnalise_x_TB_PreAvisoCampo">
+          <End Type="SinistroModel.PreAvisoCampo" Role="TB_PreAvisoCampo" Multiplicity="0..1" />
+          <End Type="SinistroModel.PreAvisoAnalise" Role="PreAvisoAnalise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoCampo">
+              <PropertyRef Name="cd_cam" />
+            </Principal>
+            <Dependent Role="PreAvisoAnalise">
+              <PropertyRef Name="cd_cam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_TB_PreAvisoDetalhe_x_TB_PreAvisoCampo">
+          <End Type="SinistroModel.PreAvisoCampo" Role="TB_PreAvisoCampo" Multiplicity="0..1" />
+          <End Type="SinistroModel.PreAvisoDetalhe" Role="PreAvisoDetalhe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_PreAvisoCampo">
+              <PropertyRef Name="cd_cam" />
+            </Principal>
+            <Dependent Role="PreAvisoDetalhe">
+              <PropertyRef Name="cd_cam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SinistroModelStoreContainer" CdmEntityContainer="SinistroEntities">
+          <EntitySetMapping Name="AvisoSinCes">
+            <EntityTypeMapping TypeName="SinistroModel.AvisoSinCes">
+              <MappingFragment StoreEntitySet="AvisoSinCes">
+                <ScalarProperty Name="cdaviso" ColumnName="cdaviso" />
+                <ScalarProperty Name="cdpesseg" ColumnName="cdpesseg" />
+                <ScalarProperty Name="cdrefmon" ColumnName="cdrefmon" />
+                <ScalarProperty Name="cdconseg" ColumnName="cdconseg" />
+                <ScalarProperty Name="cdemi" ColumnName="cdemi" />
+                <ScalarProperty Name="tpces" ColumnName="tpces" />
+                <ScalarProperty Name="tppcd" ColumnName="tppcd" />
+                <ScalarProperty Name="nrordces" ColumnName="nrordces" />
+                <ScalarProperty Name="nrapo" ColumnName="nrapo" />
+                <ScalarProperty Name="tpaviso" ColumnName="tpaviso" />
+                <ScalarProperty Name="dtatu" ColumnName="dtatu" />
+                <ScalarProperty Name="dtindeniz" ColumnName="dtindeniz" />
+                <ScalarProperty Name="dtreceb" ColumnName="dtreceb" />
+                <ScalarProperty Name="dtress" ColumnName="dtress" />
+                <ScalarProperty Name="dtsalv" ColumnName="dtsalv" />
+                <ScalarProperty Name="vltotpago" ColumnName="vltotpago" />
+                <ScalarProperty Name="vltotdesp" ColumnName="vltotdesp" />
+                <ScalarProperty Name="vltotindeniz" ColumnName="vltotindeniz" />
+                <ScalarProperty Name="vltotsalv" ColumnName="vltotsalv" />
+                <ScalarProperty Name="vltotress" ColumnName="vltotress" />
+                <ScalarProperty Name="stsituacao" ColumnName="stsituacao" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="dtreab" ColumnName="dtreab" />
+                <ScalarProperty Name="dtcanc" ColumnName="dtcanc" />
+                <ScalarProperty Name="dtemi" ColumnName="dtemi" />
+                <ScalarProperty Name="dtencerr" ColumnName="dtencerr" />
+                <ScalarProperty Name="pcporcentagem" ColumnName="pcporcentagem" />
+                <ScalarProperty Name="vltotrec" ColumnName="vltotrec" />
+                <ScalarProperty Name="pcfrqsin" ColumnName="pcfrqsin" />
+                <ScalarProperty Name="vlfrqsin" ColumnName="vlfrqsin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AvisoSinistro">
+            <EntityTypeMapping TypeName="SinistroModel.AvisoSinistro">
+              <MappingFragment StoreEntitySet="AvisoSinistro">
+                <ScalarProperty Name="cdaviso" ColumnName="cdaviso" />
+                <ScalarProperty Name="cdrefmon" ColumnName="cdrefmon" />
+                <ScalarProperty Name="cdpes" ColumnName="cdpes" />
+                <ScalarProperty Name="cdcausa" ColumnName="cdcausa" />
+                <ScalarProperty Name="cdconseg" ColumnName="cdconseg" />
+                <ScalarProperty Name="nrapolice" ColumnName="nrapolice" />
+                <ScalarProperty Name="nroficial" ColumnName="nroficial" />
+                <ScalarProperty Name="nravisoramo" ColumnName="nravisoramo" />
+                <ScalarProperty Name="dtaviso" ColumnName="dtaviso" />
+                <ScalarProperty Name="dtsin" ColumnName="dtsin" />
+                <ScalarProperty Name="dtlib" ColumnName="dtlib" />
+                <ScalarProperty Name="dtencerr" ColumnName="dtencerr" />
+                <ScalarProperty Name="dtreab" ColumnName="dtreab" />
+                <ScalarProperty Name="dtemi" ColumnName="dtemi" />
+                <ScalarProperty Name="dtpago" ColumnName="dtpago" />
+                <ScalarProperty Name="dtcanc" ColumnName="dtcanc" />
+                <ScalarProperty Name="vltotsinistro" ColumnName="vltotsinistro" />
+                <ScalarProperty Name="vlpagsin" ColumnName="vlpagsin" />
+                <ScalarProperty Name="vldesp" ColumnName="vldesp" />
+                <ScalarProperty Name="vlsalv" ColumnName="vlsalv" />
+                <ScalarProperty Name="vlress" ColumnName="vlress" />
+                <ScalarProperty Name="stsituacao" ColumnName="stsituacao" />
+                <ScalarProperty Name="cdemi" ColumnName="cdemi" />
+                <ScalarProperty Name="dtatu" ColumnName="dtatu" />
+                <ScalarProperty Name="indres" ColumnName="indres" />
+                <ScalarProperty Name="cdprodsin" ColumnName="cdprodsin" />
+                <ScalarProperty Name="incossaceito" ColumnName="incossaceito" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="localsinistro" ColumnName="localsinistro" />
+                <ScalarProperty Name="nrsinlider" ColumnName="nrsinlider" />
+                <ScalarProperty Name="dtgeracao" ColumnName="dtgeracao" />
+                <ScalarProperty Name="inacaojud" ColumnName="inacaojud" />
+                <ScalarProperty Name="incorrmonet" ColumnName="incorrmonet" />
+                <ScalarProperty Name="dtcorrmonet" ColumnName="dtcorrmonet" />
+                <ScalarProperty Name="dtultcorrmonet" ColumnName="dtultcorrmonet" />
+                <ScalarProperty Name="tpcond" ColumnName="tpcond" />
+                <ScalarProperty Name="cdcidade" ColumnName="cdcidade" />
+                <ScalarProperty Name="cdaut" ColumnName="cdaut" />
+                <ScalarProperty Name="nrcgccpf" ColumnName="nrcgccpf" />
+                <ScalarProperty Name="nmben" ColumnName="nmben" />
+                <ScalarProperty Name="inimpressaoetq" ColumnName="inimpressaoetq" />
+                <ScalarProperty Name="dtnotif" ColumnName="dtnotif" />
+                <ScalarProperty Name="cd_doe" ColumnName="cd_doe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CausaSinistro">
+            <EntityTypeMapping TypeName="SinistroModel.CausaSinistro">
+              <MappingFragment StoreEntitySet="CausaSinistro">
+                <ScalarProperty Name="cdcausa" ColumnName="cdcausa" />
+                <ScalarProperty Name="nmcausa" ColumnName="nmcausa" />
+                <ScalarProperty Name="stsituacao" ColumnName="stsituacao" />
+                <ScalarProperty Name="dtatu" ColumnName="dtatu" />
+                <ScalarProperty Name="inperdatot" ColumnName="inperdatot" />
+                <ScalarProperty Name="cdpontos" ColumnName="cdpontos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoberturaSinistro">
+            <EntityTypeMapping TypeName="SinistroModel.CoberturaSinistro">
+              <MappingFragment StoreEntitySet="CoberturaSinistro">
+                <ScalarProperty Name="cdaviso" ColumnName="cdaviso" />
+                <ScalarProperty Name="cdcobsin" ColumnName="cdcobsin" />
+                <ScalarProperty Name="cdramosg" ColumnName="cdramosg" />
+                <ScalarProperty Name="cdsubram" ColumnName="cdsubram" />
+                <ScalarProperty Name="cdprodut" ColumnName="cdprodut" />
+                <ScalarProperty Name="cdcob" ColumnName="cdcob" />
+                <ScalarProperty Name="cditeseg" ColumnName="cditeseg" />
+                <ScalarProperty Name="cdconseg" ColumnName="cdconseg" />
+                <ScalarProperty Name="nmdesc" ColumnName="nmdesc" />
+                <ScalarProperty Name="dtcad" ColumnName="dtcad" />
+                <ScalarProperty Name="dtatu" ColumnName="dtatu" />
+                <ScalarProperty Name="dtlib" ColumnName="dtlib" />
+                <ScalarProperty Name="dtencerr" ColumnName="dtencerr" />
+                <ScalarProperty Name="vltotindeniz" ColumnName="vltotindeniz" />
+                <ScalarProperty Name="vlpago" ColumnName="vlpago" />
+                <ScalarProperty Name="qtcarencia" ColumnName="qtcarencia" />
+                <ScalarProperty Name="qtdest" ColumnName="qtdest" />
+                <ScalarProperty Name="qtdprorrog" ColumnName="qtdprorrog" />
+                <ScalarProperty Name="stsituacao" ColumnName="stsituacao" />
+                <ScalarProperty Name="indmaj" ColumnName="indmaj" />
+                <ScalarProperty Name="cdverbas" ColumnName="cdverbas" />
+                <ScalarProperty Name="vlis" ColumnName="vlis" />
+                <ScalarProperty Name="pcaplicada" ColumnName="pcaplicada" />
+                <ScalarProperty Name="cddoenca" ColumnName="cddoenca" />
+                <ScalarProperty Name="cdgrupo" ColumnName="cdgrupo" />
+                <ScalarProperty Name="pcporcentagem" ColumnName="pcporcentagem" />
+                <ScalarProperty Name="vldiaria" ColumnName="vldiaria" />
+                <ScalarProperty Name="dtinibenef" ColumnName="dtinibenef" />
+                <ScalarProperty Name="vlpctfraobr" ColumnName="vlpctfraobr" />
+                <ScalarProperty Name="qtfranquia" ColumnName="qtfranquia" />
+                <ScalarProperty Name="qtmaxdiaria" ColumnName="qtmaxdiaria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndenizacaoSinistro">
+            <EntityTypeMapping TypeName="SinistroModel.IndenizacaoSinistro">
+              <MappingFragment StoreEntitySet="IndenizacaoSinistro">
+                <ScalarProperty Name="cdaviso" ColumnName="cdaviso" />
+                <ScalarProperty Name="cdcobsin" ColumnName="cdcobsin" />
+                <ScalarProperty Name="cdpes" ColumnName="cdpes" />
+                <ScalarProperty Name="cdindeniz" ColumnName="cdindeniz" />
+                <ScalarProperty Name="cdramo" ColumnName="cdramo" />
+                <ScalarProperty Name="cdsubram" ColumnName="cdsubram" />
+                <ScalarProperty Name="cdusuari" ColumnName="cdusuari" />
+                <ScalarProperty Name="cdrefmon" ColumnName="cdrefmon" />
+                <ScalarProperty Name="dtgeracao" ColumnName="dtgeracao" />
+                <ScalarProperty Name="dtliber" ColumnName="dtliber" />
+                <ScalarProperty Name="dtatu" ColumnName="dtatu" />
+                <ScalarProperty Name="pcpartic" ColumnName="pcpartic" />
+                <ScalarProperty Name="qtparc" ColumnName="qtparc" />
+                <ScalarProperty Name="stsituacao" ColumnName="stsituacao" />
+                <ScalarProperty Name="vlindeniz" ColumnName="vlindeniz" />
+                <ScalarProperty Name="vlpago" ColumnName="vlpago" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="qtdias" ColumnName="qtdias" />
+                <ScalarProperty Name="dtref" ColumnName="dtref" />
+                <ScalarProperty Name="cdbcodeb" ColumnName="cdbcodeb" />
+                <ScalarProperty Name="cdbco" ColumnName="cdbco" />
+                <ScalarProperty Name="cdagn" ColumnName="cdagn" />
+                <ScalarProperty Name="nrctaccr" ColumnName="nrctaccr" />
+                <ScalarProperty Name="tpcreddocpg" ColumnName="tpcreddocpg" />
+                <ScalarProperty Name="dgtagn" ColumnName="dgtagn" />
+                <ScalarProperty Name="dgtctaccr" ColumnName="dgtctaccr" />
+                <ScalarProperty Name="obs2" ColumnName="obs2" />
+                <ScalarProperty Name="cdoperacao" ColumnName="cdoperacao" />
+                <ScalarProperty Name="inbencon" ColumnName="inbencon" />
+                <ScalarProperty Name="qtparbencon" ColumnName="qtparbencon" />
+                <ScalarProperty Name="cdpesrepass" ColumnName="cdpesrepass" />
+                <ScalarProperty Name="inrepass" ColumnName="inrepass" />
+                <ScalarProperty Name="cdrefmonben" ColumnName="cdrefmonben" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParcelaSinistro">
+            <EntityTypeMapping TypeName="SinistroModel.ParcelaSinistro">
+              <MappingFragment StoreEntitySet="ParcelaSinistro">
+                <ScalarProperty Name="cdaviso" ColumnName="cdaviso" />
+                <ScalarProperty Name="cdcobsin" ColumnName="cdcobsin" />
+                <ScalarProperty Name="cdindeniz" ColumnName="cdindeniz" />
+                <ScalarProperty Name="cdpes" ColumnName="cdpes" />
+                <ScalarProperty Name="cdparsin" ColumnName="cdparsin" />
+                <ScalarProperty Name="cdrefmon" ColumnName="cdrefmon" />
+                <ScalarProperty Name="dtger" ColumnName="dtger" />
+                <ScalarProperty Name="dtven" ColumnName="dtven" />
+                <ScalarProperty Name="dtpagto" ColumnName="dtpagto" />
+                <ScalarProperty Name="dtatu" ColumnName="dtatu" />
+                <ScalarProperty Name="stparcela" ColumnName="stparcela" />
+                <ScalarProperty Name="vlparc" ColumnName="vlparc" />
+                <ScalarProperty Name="vlcorrbencon" ColumnName="vlcorrbencon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinistroCartaEnvio">
+            <EntityTypeMapping TypeName="SinistroModel.SinistroCartaEnvio">
+              <MappingFragment StoreEntitySet="SinistroCartaEnvio">
+                <ScalarProperty Name="cdcartaenvio" ColumnName="cdcartaenvio" />
+                <ScalarProperty Name="cdaviso" ColumnName="cdaviso" />
+                <ScalarProperty Name="tpcarta" ColumnName="tpcarta" />
+                <ScalarProperty Name="dtenvio" ColumnName="dtenvio" />
+                <ScalarProperty Name="dtreceb" ColumnName="dtreceb" />
+                <ScalarProperty Name="streceb" ColumnName="streceb" />
+                <ScalarProperty Name="dtcad" ColumnName="dtcad" />
+                <ScalarProperty Name="cdusuari" ColumnName="cdusuari" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAviso">
+            <EntityTypeMapping TypeName="SinistroModel.PreAviso">
+              <MappingFragment StoreEntitySet="TB_PreAviso">
+                <ScalarProperty Name="cd_preavi" ColumnName="cd_preavi" />
+                <ScalarProperty Name="tp_orgpdr" ColumnName="tp_orgpdr" />
+                <ScalarProperty Name="cd_orgpdr" ColumnName="cd_orgpdr" />
+                <ScalarProperty Name="cd_sit" ColumnName="cd_sit" />
+                <ScalarProperty Name="cd_ori" ColumnName="cd_ori" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoAnalise">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoAnalise">
+              <MappingFragment StoreEntitySet="TB_PreAvisoAnalise">
+                <ScalarProperty Name="cd_ana" ColumnName="cd_ana" />
+                <ScalarProperty Name="cd_preavihis" ColumnName="cd_preavihis" />
+                <ScalarProperty Name="cd_cam" ColumnName="cd_cam" />
+                <ScalarProperty Name="ds_val" ColumnName="ds_val" />
+                <ScalarProperty Name="st_dve" ColumnName="st_dve" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoDetalhe">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoDetalhe">
+              <MappingFragment StoreEntitySet="TB_PreAvisoDetalhe">
+                <ScalarProperty Name="cd_preavidtl" ColumnName="cd_preavidtl" />
+                <ScalarProperty Name="cd_preavi" ColumnName="cd_preavi" />
+                <ScalarProperty Name="cd_cam" ColumnName="cd_cam" />
+                <ScalarProperty Name="ds_val" ColumnName="ds_val" />
+                <ScalarProperty Name="st_cri" ColumnName="st_cri" />
+                <ScalarProperty Name="ds_msg" ColumnName="ds_msg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoHistorico">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoHistorico">
+              <MappingFragment StoreEntitySet="TB_PreAvisoHistorico">
+                <ScalarProperty Name="cd_preavihis" ColumnName="cd_preavihis" />
+                <ScalarProperty Name="cd_preavi" ColumnName="cd_preavi" />
+                <ScalarProperty Name="tp_mov" ColumnName="tp_mov" />
+                <ScalarProperty Name="dt_icl" ColumnName="dt_icl" />
+                <ScalarProperty Name="cd_usu" ColumnName="cd_usu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoHistoricoCancelamento">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoHistoricoCancelamento">
+              <MappingFragment StoreEntitySet="TB_PreAvisoHistoricoCancelamento">
+                <ScalarProperty Name="cd_preavican" ColumnName="cd_preavican" />
+                <ScalarProperty Name="cd_preavihis" ColumnName="cd_preavihis" />
+                <ScalarProperty Name="cd_motcan" ColumnName="cd_motcan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoHistoricoCartaComunicacao">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoHistoricoCartaComunicacao">
+              <MappingFragment StoreEntitySet="TB_PreAvisoHistoricoCartaComunicacao">
+                <ScalarProperty Name="cd_preavicrt" ColumnName="cd_preavicrt" />
+                <ScalarProperty Name="cd_preavihis" ColumnName="cd_preavihis" />
+                <ScalarProperty Name="cd_crt" ColumnName="cd_crt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoHistoricoJson">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoHistoricoJson">
+              <MappingFragment StoreEntitySet="TB_PreAvisoHistoricoJson">
+                <ScalarProperty Name="cd_cmn" ColumnName="cd_cmn" />
+                <ScalarProperty Name="cd_preavihis" ColumnName="cd_preavihis" />
+                <ScalarProperty Name="ds_Json" ColumnName="ds_Json" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoProcessadoCertificado">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoProcessadoCertificado">
+              <MappingFragment StoreEntitySet="TB_PreAvisoProcessadoCertificado">
+                <ScalarProperty Name="cd_preavicer" ColumnName="cd_preavicer" />
+                <ScalarProperty Name="cd_preavihis" ColumnName="cd_preavihis" />
+                <ScalarProperty Name="cd_ctt" ColumnName="cd_ctt" />
+                <ScalarProperty Name="cd_emi" ColumnName="cd_emi" />
+                <ScalarProperty Name="nr_cer" ColumnName="nr_cer" />
+                <ScalarProperty Name="cd_pdt" ColumnName="cd_pdt" />
+                <ScalarProperty Name="nr_seqpla" ColumnName="nr_seqpla" />
+                <ScalarProperty Name="dt_inivigpla" ColumnName="dt_inivigpla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoProcessadoCobertura">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoProcessadoCobertura">
+              <MappingFragment StoreEntitySet="TB_PreAvisoProcessadoCobertura">
+                <ScalarProperty Name="cd_preavicob" ColumnName="cd_preavicob" />
+                <ScalarProperty Name="cd_preavicer" ColumnName="cd_preavicer" />
+                <ScalarProperty Name="cd_ctt" ColumnName="cd_ctt" />
+                <ScalarProperty Name="cd_itmsgr" ColumnName="cd_itmsgr" />
+                <ScalarProperty Name="nr_cer" ColumnName="nr_cer" />
+                <ScalarProperty Name="cd_pdt" ColumnName="cd_pdt" />
+                <ScalarProperty Name="cd_cob" ColumnName="cd_cob" />
+                <ScalarProperty Name="cd_movcob" ColumnName="cd_movcob" />
+                <ScalarProperty Name="cd_avi" ColumnName="cd_avi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Temp1">
+            <EntityTypeMapping TypeName="SinistroModel.TB_Temp1">
+              <MappingFragment StoreEntitySet="TB_Temp1">
+                <ScalarProperty Name="cd_pessoa" ColumnName="cd_pessoa" />
+                <ScalarProperty Name="cd_aviso" ColumnName="cd_aviso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PreAvisoCampo">
+            <EntityTypeMapping TypeName="SinistroModel.PreAvisoCampo">
+              <MappingFragment StoreEntitySet="TB_PreAvisoCampo">
+                <ScalarProperty Name="cd_tip" ColumnName="cd_tip" />
+                <ScalarProperty Name="st_sit" ColumnName="st_sit" />
+                <ScalarProperty Name="nr_ord" ColumnName="nr_ord" />
+                <ScalarProperty Name="ds_cam" ColumnName="ds_cam" />
+                <ScalarProperty Name="nm_cam" ColumnName="nm_cam" />
+                <ScalarProperty Name="cd_cam" ColumnName="cd_cam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

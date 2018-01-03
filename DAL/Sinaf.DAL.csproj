@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FBAE8D3-2892-49A3-9D84-3B138E22068A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sinaf.DAL</RootNamespace>
+    <AssemblyName>Sinaf.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DaoDb.cs" />
+    <Compile Include="DaoDBSies.cs" />
+    <Compile Include="DaoDBSinistro.cs" />
+    <Compile Include="Financeiro\MovtoSinistroDao.cs" />
+    <Compile Include="IDaoDB.cs" />
+    <Compile Include="DaoGenerics.cs" />
+    <Compile Include="Sies\CertificadoDao.cs" />
+    <Compile Include="Sies\CoberturaDao.cs" />
+    <Compile Include="Sies\DominioCampoDao.cs" />
+    <Compile Include="Sies\EmissaoDao.cs" />
+    <Compile Include="Sies\ItemOutRiscPessDao.cs" />
+    <Compile Include="Sies\OrgaoProdutorDao.cs" />
+    <Compile Include="Sies\ParcelaPremioDao.cs" />
+    <Compile Include="Sies\PessoaDao.cs" />
+    <Compile Include="Sies\Temp2Dao.cs" />
+    <Compile Include="Sies\UsuarioDao.cs" />
+    <Compile Include="Sinistro\AvisoSinCesDao.cs" />
+    <Compile Include="Sinistro\AvisoSinistroDao.cs" />
+    <Compile Include="Sinistro\CausaSinistroDao.cs" />
+    <Compile Include="Sinistro\CoberturaSinistroDao.cs" />
+    <Compile Include="Sinistro\IndenizacaoSinistroDao.cs" />
+    <Compile Include="Sinistro\ParcelaSinistroDao.cs" />
+    <Compile Include="Sinistro\PreAvisoAnaliseDao.cs" />
+    <Compile Include="Sinistro\PreAvisoCampoDao.cs" />
+    <Compile Include="Sinistro\PreAvisoDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sinistro\PreAvisoDetalheDao.cs" />
+    <Compile Include="Sinistro\PreAvisoHistoricoDao.cs" />
+    <Compile Include="Sinistro\PreAvisoHistoricoCancelamentoDao.cs" />
+    <Compile Include="Sinistro\PreAvisoHistoricoCartaComunicacaoDao.cs" />
+    <Compile Include="Sinistro\PreAvisoHistoricoJsonDao.cs" />
+    <Compile Include="Sinistro\PreAvisoProcessadoCertificadoDao.cs" />
+    <Compile Include="Sinistro\PreAvisoProcessadoCoberturaDao.cs" />
+    <Compile Include="Sinistro\SinistroCartaEnvioDao.cs" />
+    <Compile Include="Sinistro\Temp1Dao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VOL\Sinaf.VOL.csproj">
+      <Project>{C987D4D0-3EF9-480B-BE0E-E80A56BEB0EB}</Project>
+      <Name>Sinaf.VOL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

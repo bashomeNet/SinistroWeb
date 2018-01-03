@@ -1,0 +1,101 @@
+﻿@model IEnumerable<SinistroApp.Models.GridLibIndenizModel>
+@{
+    ViewBag.Title = "LiberarIndenizacao";
+}
+
+<!-- tool action content -->
+<div class="sns-top-toolbox">
+    <div class="title_left">
+        <div class="btn-group">
+            <span class="fa fa-share-square sns-tool-action" title="Liberar Indenização"></span>
+            <span class="fa fa-ban sns-tool-action sns-tool-action-after" title="Cancelar"></span>
+        </div>
+    </div>
+</div>
+<!-- tool action content -->
+
+<!-- page content -->
+<div class="sns-position-title">
+
+    <div class="clearfix"></div>
+
+    <!-- Liberar Indenização -->
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4 class="sns-panel-title">Liberação de Indenização <small>Sinistros</small></h4>
+               
+                <ul class="nav navbar-right panel_toolbox">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></a>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="x_content">
+
+                <!-- Partial View Combos Empresa/Sucursal -->
+                @{
+                    Html.RenderPartial("_PartialCmbEmpresa", ViewData["CmbEmpresas"]);
+                }
+
+                @{
+                    Html.RenderPartial("_PartialCmbsucursal", ViewData["CmbSucursais"]);
+                }
+
+                <div class="clearfix line-space-md"></div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                    <table id="sns-table-libindeniz" class="table table-striped table-bordered sns-datatable sns-sorting-disabled" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="sns-no-sort">
+                                    <input type="checkbox" id="check-all" />
+                                </th>
+                                <th>N° Protocolo </th>
+                                <th>N° Indenização </th>
+                                <th>Cobertura </th>
+                                <th>Beneficiário </th>
+                                <th>Valor Total </th>
+                                <th>Qtd Parcelas </th>
+                                <th>Data Vencimento </th>
+                                <th>Meio Pagamento </th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="a-center">
+                                            <input type="checkbox" class="checkbox-all">
+                                        </td>
+                                        <td>@Html.DisplayFor(modelItem => item.nrProtocoloInd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.nrIndenizacaoInd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.coberturaInd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.beneficiarioInd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.valTotalInd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.qtdParcelasInd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.dtVencimentoInd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.meioPgInd)</td>
+                                        <td class="sns-td-action">
+                                            <a href="../Indenizacao/Indenizacao">
+                                                <div id="" type="button" class="btn btn-primary btn-xs">
+                                                    <span class="fa fa-binoculars sns-margin-icon sns-icon-sm-position" title="Selecionar"></span>Detalhar
+                                                </div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page content -->
+

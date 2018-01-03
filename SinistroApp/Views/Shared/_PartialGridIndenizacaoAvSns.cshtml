@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SinistroApp.Models.GridIndenizacaoModel>
+
+<div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+    <table id="sns-table-indeniz-avisin" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="sorting_disabled" rowspan="1" colspan="1"></th>
+                <th>Cód. Indenização</th>
+                <th>Situação</th>
+                <th>Cobertura</th>
+                <th>Beneficiário</th>
+                <th>Valor Total</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr class="">
+                        <td id="@Html.DisplayFor(modelItem => item.idInd)" class="details-control"></td>
+                        <td>@Html.DisplayFor(modelItem => item.codIndenizacaoInd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.situacaoInd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.coberturaInd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.beneficiarioInd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.valTotalInd)</td>
+                        <td class="sns-td-action">
+                            <a href="Indenizacao">
+                                <div id="" type="button" class="btn btn-primary btn-xs">
+                                    <span class="fa fa-binoculars sns-margin-icon sns-icon-sm-position" title="Detalhar"></span>Detalhar
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+                   @*<tr class="details-row">
+                        <td colspan="7">
+                            <div class="details-container">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <label class="lbl-head-title">Banco: </label>
+                                    <label id="" class="lbl-content-description">
+                                        @Html.DisplayFor(modelItem => item.bancoInd)
+                                    </label>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <label class="lbl-head-title">Agência: </label>
+                                    <label id="" class="lbl-content-description">
+                                        @Html.DisplayFor(modelItem => item.agenciaInd)
+                                    </label>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <label class="lbl-head-title">Conta Corrente:</label>
+                                    <label id="" class="lbl-content-description">
+                                        @Html.DisplayFor(modelItem => item.contaInd)
+                                    </label>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <label class="lbl-head-title">Data Vencimento:</label>
+                                    <label id="" class="lbl-content-description">
+                                        @Html.DisplayFor(modelItem => item.dtVencimentoInd)
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>*@
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
